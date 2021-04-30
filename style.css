@@ -12,8 +12,9 @@ body {
 button {
     border: none;
     background-color: transparent;
-    transition: transform 1s;
+    transition: transform 0.5s;
     margin: 10px;
+    cursor: pointer;
 }
 
 button:focus {
@@ -36,9 +37,8 @@ h1 {
 .book {
     width: 350px;
     height: 500px;
-    border: 1px solid black;
     position: relative;
-    transition: transform 1s;
+    transition: transform 0.5s;
 }
 
 .opened {
@@ -54,6 +54,11 @@ h1 {
     perspective: 1500px;
 }
 
+.front {
+    backface-visibility: hidden;
+    border-left: 2px solid powderblue;
+}
+
 .front, 
 .back {
     position: absolute;
@@ -65,13 +70,10 @@ h1 {
     justify-content: center;
     align-items: center;
     background-color: white;
-    transition: transform 1s;
+    transition: transform 0.5s;
     transform-origin: left;
 }
 
-.front {
-    backface-visibility: hidden;
-}
 
 .back {
     z-index: -1;
@@ -90,3 +92,18 @@ h1 {
 .flipped .back {
     transform: rotateY(-180deg);
 }
+
+
+/* Pages */
+#p1 {
+    z-index: 3;
+}
+
+#p2 {
+    z-index: 2;
+}
+
+#p3 {
+    z-index: 1;
+}
+
